@@ -1,0 +1,9 @@
+.buttonAction{
+    width: 91px;
+    height: 91px;
+    left: 30px;
+    top: 170px;
+
+    background: #8C52E5;
+    border-radius: 5px;
+}

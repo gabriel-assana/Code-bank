@@ -1,8 +1,9 @@
 .sidebar{
     display:flex;
-    width: 10vw;
-    height: 100vh;
-    left: 0px;
-    top: 0px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:center;
     background: #68DE5A;
+
 }

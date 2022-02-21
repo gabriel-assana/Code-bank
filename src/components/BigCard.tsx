@@ -2,7 +2,7 @@ import '../styles/bigcard.css';
 
 import React from 'react';
 
-function BigCard () {
+export default function BigCard () {
   return(
 
     <div className="bigcard">
@@ -13,4 +13,3 @@ function BigCard () {
 
 }
 
-export default BigCard
