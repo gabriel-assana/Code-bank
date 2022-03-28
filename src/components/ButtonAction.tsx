@@ -2,15 +2,24 @@ import '../styles/buttonAction.css';
 
 import React from 'react';
 
+import pix from '../assets/pix.png';
+
 interface ButtonAction { 
     title: string,
 }
 
 
-export default function ButtonAction(props:ButtonAction) {
+export default function ButtonAction({title}:ButtonAction) {
 
     return(
-     <button className="buttonAction" onClick={() => handleTransaction(props.title)} >{props.title}</button>
+     <>
+        <div className="buttonAction" 
+                onClick={() => handleTransaction(title)} >
+                    {title}
+        <img className="pix" src={pix} alt="pix-image"/>
+        </div>
+    </>   
+    
     )
 
 
