@@ -2,10 +2,10 @@ import '../styles/sidebar.css';
 
 import React from 'react';
 
-import ButtonAction from './ButtonAction';
+import { ButtonAction } from './ButtonAction';
 
 
-export default function SiderBar(){
+export function SiderBar(){
 
     return(
 

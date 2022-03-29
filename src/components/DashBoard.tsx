@@ -2,13 +2,13 @@ import '../styles/dashboard.css';
 
 import React from 'react';
 
-import BigCard from './BigCard';
-import Card from './Card';
-import SiderBar from './SideBar';
+import { BigCard } from './BigCard';
+import { Card } from './Card';
+import { SiderBar } from './SideBar';
 
 
 
-export default function DashBoard(){
+export function DashBoard(){
 
     return(
             <div className="dashboard">
