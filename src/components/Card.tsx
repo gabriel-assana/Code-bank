@@ -1,11 +1,24 @@
 import '../styles/card.css';
 
-import React from 'react';
+import { useState } from 'react';
+
+import cifrao from '../assets/cifrao.svg';
 
 export function Card(){
+
+    const [balances, setBalances] = useState(1000)
+    const [accountTransfer, setAccountTransfer ] = useState(0)
+ 
     return(
         <div className="card">
-            R$ 10.000,00
+          <div className="card-header">
+            <img src={cifrao} alt="cifrao"></img>
+            <span>Conta</span>
+          </div>
+          <div className="card-body">
+            <span className="title">Saldo disponivel</span>
+                <span className="value">R$: {balances}</span>  
+            </div>
         </div>
     )
 }
