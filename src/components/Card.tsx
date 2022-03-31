@@ -17,7 +17,7 @@ export function Card(){
           </div>
           <div className="card-body">
             <span className="title">Saldo disponivel</span>
-                <span className="value">R$: {balances}</span>  
+                <span className="value">R$:{balances}</span>  
             </div>
         </div>
     )
