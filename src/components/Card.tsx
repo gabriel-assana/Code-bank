@@ -7,8 +7,7 @@ import cifrao from '../assets/cifrao.svg';
 export function Card(){
 
     const [balances, setBalances] = useState(1000)
-    const [accountTransfer, setAccountTransfer ] = useState(0)
- 
+     
     return(
         <div className="card">
           <div className="card-header">
