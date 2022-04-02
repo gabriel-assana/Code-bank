@@ -1,12 +1,8 @@
 import '../styles/dashboard.css';
 
-import React from 'react';
-
 import { BigCard } from './BigCard';
 import { Card } from './Card';
-import { SiderBar } from './SideBar';
-
-
+import { SiderBar } from './Sidebar/SideBar';
 
 export function DashBoard(){
 

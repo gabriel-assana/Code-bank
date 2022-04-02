@@ -7,6 +7,7 @@ import cifrao from '../assets/cifrao.svg';
 export function Card(){
 
     const [balances, setBalances] = useState(1000)
+
      
     return(
         <div className="card">
