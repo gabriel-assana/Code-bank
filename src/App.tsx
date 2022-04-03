@@ -1,6 +1,6 @@
 import './styles/global.css';
 
-import { DashBoard } from './components/DashBoard';
+import { DashBoard } from './components/Dasboard/DashBoard';
 
 function App() {
 

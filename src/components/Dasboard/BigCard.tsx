@@ -1,4 +1,4 @@
-import '../styles/bigcard.css';
+import '../../styles/dashboard/bigcard.css';
 
 import React from 'react';
 

@@ -1,22 +1,46 @@
+import '../../styles/global.css';
 import '../../styles/sidebar/buttonAction.css';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Modal from 'react-modal';
 
 import pix from '../../assets/pix.svg';
 
+Modal.setAppElement('#root')
 
 interface ButtonActionProps { 
     title: string,
-    onOpenNewTransitionModal: () => void;
 }
 
-export function ButtonAction ({title, onOpenNewTransitionModal}:ButtonActionProps) {
+export function ButtonAction ({title}:ButtonActionProps) {
+
+    const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
+
+
+    function handleOpenNewTransactionModal(){
+    setIsNewTransactionModalOpen(true);
+
+    }
+
+    function handleCloseNewTransactionModal(){
+    setIsNewTransactionModalOpen(false);
+    }
 
     return(
      <>
-        <div className="buttonAction" onClick={() => onOpenNewTransitionModal()} >
+        <div className="buttonAction" onClick={() => handleOpenNewTransactionModal()} >
             <img className="pix" src={pix} alt={title}/>
                         {title}
+
+            <Modal 
+               isOpen={isNewTransactionModalOpen}
+               onRequestClose={handleCloseNewTransactionModal}
+               overlayClassName="react-modal-overlay"
+               className="react-modal-content"
+            >
+              
+
+            </Modal>
         </div>
     </>   
     
