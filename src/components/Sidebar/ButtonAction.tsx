@@ -5,7 +5,9 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 
 import pix from '../../assets/pix.svg';
-import { FormModalDepositar } from '../Forms/FormModalDepositar';
+import { FormDeposit } from '../Forms/FormDeposit';
+import { FormPayments } from '../Forms/FormPayments';
+import { FormTransfers } from '../Forms/FormTransfers';
 
 Modal.setAppElement('#root')
 
@@ -16,6 +18,8 @@ interface ButtonActionProps {
 export function ButtonAction ({title}:ButtonActionProps) {
 
     const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
+
+
 
 
     function handleOpenNewTransactionModal(){
@@ -31,7 +35,7 @@ export function ButtonAction ({title}:ButtonActionProps) {
      <>
         <div className="buttonAction" onClick={() => handleOpenNewTransactionModal()} >
             <img className="pix" src={pix} alt={title}/>
-                        {title}
+            <span className="btn-title">{title}</span>    
 
             <Modal 
                isOpen={isNewTransactionModalOpen}
@@ -39,7 +43,11 @@ export function ButtonAction ({title}:ButtonActionProps) {
                overlayClassName="react-modal-overlay"
                className="react-modal-content"
             >
-              <FormModalDepositar/>
+              {               
+                title === "Depositar" ? <FormDeposit/> :  
+                title === "Pagamentos" ? <FormPayments/> : 
+                title === "Transferir" ? <FormTransfers/> : null
+              }              
 
             </Modal>
         </div>

@@ -8,7 +8,7 @@ export function SiderBar(){
 
         <div className="sidebar">
             <ButtonAction title="Depositar" />
-            <ButtonAction title="Sacar" />
+            <ButtonAction title="Pagamentos" />
             <ButtonAction title="Transferir"/>
             <ButtonAction title="Extrato" />
         </div>

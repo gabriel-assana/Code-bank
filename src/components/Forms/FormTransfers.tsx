@@ -1,24 +1,25 @@
-import '../../styles/form/FormModalDepositar.css';
+import '../../styles/form/Form.css';
 
 import React from 'react';
 
-export function FormModalDepositar(){
+export function FormTransfers(){
 
     return(
         <>
             <form>
 
-                <h2>Depositos</h2>
+                <h2>Tranferir</h2>
 
                 <input 
-                    placeholder="Valor"
+                    type="number"
+                    placeholder="Valor a ser pago"
                 />
 
                 <input 
                     placeholder="Descrição do deposito"
                 />
                 
-                <button type="submit">Depositar</button>
+                <button type="submit">Tranferir</button>
             </form>
 
         </>

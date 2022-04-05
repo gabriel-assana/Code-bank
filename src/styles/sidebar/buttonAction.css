@@ -2,6 +2,7 @@
 
 .buttonAction{
     display: flex;
+    box-sizing: border-box;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
@@ -17,7 +18,8 @@
     border-radius: 5px;
 
     margin-top: 1rem;
-    padding-left: 10px;
+    padding-left: 9px;
+    padding-right: 2px;
 
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -26,4 +28,9 @@
 
 .pix{
     margin-bottom: 1rem;   
+}
+
+.btn-title{
+    width: 100%;
+    font-size: 14px
 }
