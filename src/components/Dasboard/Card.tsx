@@ -1,5 +1,7 @@
 import '../../styles/dashboard/card.css';
 
+import { formatter } from '../../utils/util';
+
 interface CardProps {
   title: string; 
   titleCenter: string;
@@ -11,6 +13,8 @@ interface CardProps {
 export function Card({imageUrl,nameImage,title,titleCenter}:CardProps){
 
     const balances = 1000
+
+    const newBalance = formatter.format(balances)
      
     return(
         <div className="card">
@@ -20,7 +24,7 @@ export function Card({imageUrl,nameImage,title,titleCenter}:CardProps){
           </div>
           <div className="card-body">
             <span className="title">{titleCenter}</span>
-                <span className="value">R$:{balances}</span>  
+                <span className="value">{newBalance}</span>  
             </div>
         </div>
     )

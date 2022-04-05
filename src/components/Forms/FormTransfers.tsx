@@ -10,13 +10,22 @@ export function FormTransfers(){
 
                 <h2>Tranferir</h2>
 
+                <span className="icon-input">R$
+                    <input className="input-value" type="number" placeholder="Valor"/>
+                </span>
+
                 <input 
-                    type="number"
-                    placeholder="Valor a ser pago"
+                    type="number" 
+                    placeholder="Agência"
+                />
+                
+                <input 
+                    type="number" 
+                    placeholder="Conta"
                 />
 
                 <input 
-                    placeholder="Descrição do deposito"
+                    placeholder="Descrição da Transferência"
                 />
                 
                 <button type="submit">Tranferir</button>
