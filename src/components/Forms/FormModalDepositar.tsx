@@ -1,3 +1,5 @@
+import '../../styles/form/FormModalDepositar.css';
+
 import React from 'react';
 
 export function FormModalDepositar(){
@@ -9,13 +11,14 @@ export function FormModalDepositar(){
                 <h2>Depositos</h2>
 
                 <input 
-                    placeholder="Valor a depositar"
+                    placeholder="Valor"
                 />
 
                 <input 
                     placeholder="Descrição do deposito"
                 />
-
+                
+                <button type="submit">Depositar</button>
             </form>
 
         </>

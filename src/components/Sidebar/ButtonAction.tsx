@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 
 import pix from '../../assets/pix.svg';
+import { FormModalDepositar } from '../Forms/FormModalDepositar';
 
 Modal.setAppElement('#root')
 
@@ -38,7 +39,7 @@ export function ButtonAction ({title}:ButtonActionProps) {
                overlayClassName="react-modal-overlay"
                className="react-modal-content"
             >
-              
+              <FormModalDepositar/>
 
             </Modal>
         </div>
