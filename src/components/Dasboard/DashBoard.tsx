@@ -2,6 +2,7 @@ import '../../styles/dashboard/dashboard.css';
 
 import imgCifrao from '../../assets/cifrao.svg';
 import imgCreditCard1 from '../../assets/credit-card-1.svg';
+import { TransactionsContext } from '../../TransactionsContext';
 import { SiderBar } from '../Sidebar/SideBar';
 import { BigCard } from './BigCard';
 import { Card } from './Card';
@@ -9,6 +10,7 @@ import { Card } from './Card';
 export function DashBoard(){
 
     return(
+          <TransactionsContext.Provider value ={[]}>
             <div className="dashboard">
                 <div className="sidebar">
                   <SiderBar/>
@@ -31,6 +33,7 @@ export function DashBoard(){
                 <BigCard />  
                 </div>
             </div>
+          </TransactionsContext.Provider>
     )
 }
 

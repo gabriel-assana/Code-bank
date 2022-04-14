@@ -10,7 +10,7 @@ export function FormTransfers(){
 
                 <h2>Tranferir</h2>
 
-                <span className="icon-input">R$
+                <span className="icon-input">
                     <input className="input-value" type="number" placeholder="Valor"/>
                 </span>
 
