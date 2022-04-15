@@ -19,9 +19,6 @@ export function ButtonAction ({title}:ButtonActionProps) {
 
     const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
 
-
-
-
     function handleOpenNewTransactionModal(){
     setIsNewTransactionModalOpen(true);
 

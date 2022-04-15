@@ -4,8 +4,8 @@ import imgCifrao from '../../assets/cifrao.svg';
 import imgCreditCard1 from '../../assets/credit-card-1.svg';
 import { TransactionsContext } from '../../TransactionsContext';
 import { SiderBar } from '../Sidebar/SideBar';
-import { BigCard } from './BigCard';
 import { Card } from './Card';
+import { TransactionTable } from './TransactionTable';
 
 export function DashBoard(){
 
@@ -30,7 +30,7 @@ export function DashBoard(){
                   />
                 </div>
                 <div className="card2">
-                <BigCard />  
+                <TransactionTable />  
                 </div>
             </div>
           </TransactionsContext.Provider>

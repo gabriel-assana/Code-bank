@@ -1,0 +1,37 @@
+{
+  "deposit": [
+    {
+      "id": 1,
+      "description": "Salário",
+      "value": 1000,
+      "creationDate": "14-04-2022"
+    }
+  ],
+  "transfer": [
+    {
+      "id": 1,
+      "category": "transfer",
+      "description": "Salário",
+      "value": 1000,
+      "creationDate": "14-04-2022"
+    }
+  ],
+  "debitPayment": [
+    {
+      "id": 1,
+      "category": "Deposit",
+      "description": "Salário",
+      "value": 1000,
+      "creationDate": "14-04-2022"
+    }
+  ],
+  "cardPayment": [
+    {
+      "id": 1,
+      "category": "Deposit",
+      "description": "Salário",
+      "value": 1000,
+      "creationDate": "14-04-2022"
+    }
+  ]
+}

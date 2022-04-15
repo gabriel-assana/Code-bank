@@ -1,22 +1,28 @@
 import '../../styles/form/Form.css';
 
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useContext, useState } from 'react';
+
+import { api } from '../../services/api';
+import { TransactionsContext } from '../../TransactionsContext';
 
 export function FormDeposit(){
+
+    const data = useContext(TransactionsContext);
 
     const [valueDeposit, setValueDeposit] = useState(0)
     const [descriptionDeposit, setDescriptionDeposit] = useState('')
 
 
     function handleCreateDeposit(event: FormEvent) {
-        event.preventDefault();      
+        event.preventDefault();    
 
-        console.log(
+        const depositData = {
             valueDeposit,
-            descriptionDeposit
-        )
-    }
+            descriptionDeposit,
+        }
 
+         api.post('deposit', depositData)
+    }
 
     return(
         <>
@@ -48,4 +54,8 @@ export function FormDeposit(){
     )
     
 
+}
+
+function userEffect(arg0: () => void, arg1: never[]) {
+    throw new Error('Function not implemented.');
 }
