@@ -44,7 +44,7 @@ input {
     padding: 0 1.5em;
     height: 4rem;
     
-    background: #f3688b;
+    background: #f3275a;
     color:#FFF;
     margin-top: 1em;
 
@@ -69,7 +69,8 @@ input {
     height: 4rem;;
     border: 1px solid #d7d7d7;
     border-radius: 0.25rem;
-    background:transparent;
+    background: #f5527b;
+    color: #fff;
     
     display: flex;
     align-items: center;
@@ -77,9 +78,17 @@ input {
     gap: 0.5rem;
 }
 
+ .type-card:hover{
+     border: 2px solid #f8003e;
+ }
+
+ .type-card:focus{
+    background: #f8003e;
+ }    
+
 .type-card img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .type-card span {

@@ -12,7 +12,7 @@ export function FormTransfers(){
     const description = "Ag " + agency + " Cc " + account 
 
     
-    function handleTransferDeposit(event: FormEvent) {
+    function handleCreateTransfer(event: FormEvent) {
         event.preventDefault();    
         
         const transferData = {
@@ -28,7 +28,7 @@ export function FormTransfers(){
 
     return(
         <>
-            <form onSubmit={handleTransferDeposit}>
+            <form onSubmit={handleCreateTransfer}>
 
                 <h2>Tranferir</h2>
 

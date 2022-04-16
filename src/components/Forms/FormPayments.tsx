@@ -1,27 +1,49 @@
 import '../../styles/form/Form.css';
 
-import React from 'react';
+import React, { FormEvent, useState } from 'react';
 
-import debito from '../../assets/cifrao.svg';
-import credito from '../../assets/credit-card-1.svg';
+import credito from '../../assets/credit-card.svg';
+import debito from '../../assets/money.svg';
+import { api } from '../../services/api';
 
 export function FormPayments(){
 
+    const [value, setValue] = useState(0)
+    const [description, setDescription] = useState('')
+    const [type, setType] = useState('')
+
+    function handleCreatePayment(event: FormEvent) {
+        event.preventDefault();    
+        
+        const paymentData = {
+            value,
+            description,
+            type,
+            createdAt: new Date()
+        }
+        
+         api.post('transactions', paymentData)
+    }
+
     return(
         <>
-            <form>
+            <form onSubmit={handleCreatePayment}>
 
                 <h2>Pagamentos</h2>
 
                 <input 
                     type="number"
                     placeholder="Valor a ser pago"
+                    value={value}
+                    onChange={event => setValue(Number(event.target.value))}
                 />
 
                 <div className="container-btns">
                     <button
                         type="button"
                         className="type-card"
+                        value={type}
+                        onClick={()=> setType("Débito em Conta")}
                     >
                         <img src={debito} alt="Débito em Conta"/>
                         <span>Débito em Conta</span>
@@ -29,6 +51,8 @@ export function FormPayments(){
                     <button
                         type="button"
                         className="type-card"
+                        value={type}
+                        onClick={()=> setType("Cartão de Crédito")}
                     >
                         <img src={credito} alt="Cartão de Credito"/>
                         <span>Cartão de Crédito</span>
@@ -37,6 +61,8 @@ export function FormPayments(){
 
                 <input 
                     placeholder="Descrição do deposito"
+                    value={description}
+                    onChange={event => setDescription(event.target.value)}
                 />
                 
                 <button 

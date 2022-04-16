@@ -17,7 +17,7 @@
     {
       "value": 1200,
       "description": "Fatura do Mês",
-      "type": "Debito em Conta",
+      "type": "Débito em Conta",
       "createdAt": "2022-04-15T19:02:19.436Z",
       "id": 3
     },
