@@ -9,19 +9,21 @@ export function FormDeposit(){
 
     const data = useContext(TransactionsContext);
 
-    const [valueDeposit, setValueDeposit] = useState(0)
-    const [descriptionDeposit, setDescriptionDeposit] = useState('')
+    const [value, setValue] = useState(0)
+    const [description, setDescription] = useState('')
 
 
     function handleCreateDeposit(event: FormEvent) {
         event.preventDefault();    
 
         const depositData = {
-            valueDeposit,
-            descriptionDeposit,
+            value,
+            description,
+            type: "Deposito",
+            createdAt: new Date()
         }
 
-         api.post('deposit', depositData)
+         api.post('transactions', depositData)
     }
 
     return(
@@ -33,17 +35,20 @@ export function FormDeposit(){
                 <input 
                     type="number"
                     placeholder="Valor"
-                    value={valueDeposit}
-                    onChange={event => setValueDeposit(Number(event.target.value))}
+                    value={value}
+                    onChange={event => setValue(Number(event.target.value))}
                 />
 
                 <input 
                     placeholder="Descrição do deposito"
-                    value={descriptionDeposit}
-                    onChange={event => setDescriptionDeposit(event.target.value)}
+                    value={description}
+                    onChange={event => setDescription(event.target.value)}
                 />
                 
-                <button type="submit">
+                <button 
+                    type="submit"
+                    className="btn-submit"
+                >
                     Depositar
                 </button>
             </form>

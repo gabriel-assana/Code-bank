@@ -1,7 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 .transactiontable{
     width: 63.3vw;
     height: 40vh;
     margin-left: 3em;
     background: #FBFBFB;
     border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-spacing:0 0.5rem;
+}
+
+th {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    text-align: left;
+    line-height: 1.5rem;
+
+}
+
+td{
+    font-family: 'Roboto', sans-serif;
+    padding: 1rem 2rem;
+    border: 0;
+    background-color: #e8e8e8;
+    
 }

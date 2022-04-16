@@ -1,37 +1,32 @@
 {
-  "deposit": [
+  "transactions": [
     {
-      "id": 1,
-      "description": "Salário",
       "value": 1000,
-      "creationDate": "14-04-2022"
-    }
-  ],
-  "transfer": [
+      "description": "Salário",
+      "type": "Deposito",
+      "createdAt": "2022-04-15T19:02:19.436Z",
+      "id": 1
+    },
     {
-      "id": 1,
-      "category": "transfer",
-      "description": "Salário",
-      "value": 1000,
-      "creationDate": "14-04-2022"
-    }
-  ],
-  "debitPayment": [
+      "value": 500,
+      "description": "Ag 3995 - Cc 801548",
+      "type": "Transferência",
+      "createdAt": "2022-04-15T19:02:19.436Z",
+      "id": 2
+    },
     {
-      "id": 1,
-      "category": "Deposit",
-      "description": "Salário",
-      "value": 1000,
-      "creationDate": "14-04-2022"
-    }
-  ],
-  "cardPayment": [
+      "value": 1200,
+      "description": "Fatura do Mês",
+      "type": "Debito em Conta",
+      "createdAt": "2022-04-15T19:02:19.436Z",
+      "id": 3
+    },
     {
-      "id": 1,
-      "category": "Deposit",
-      "description": "Salário",
-      "value": 1000,
-      "creationDate": "14-04-2022"
+      "value": 300,
+      "description": "Tenis",
+      "type": "Cartão de Crédito",
+      "createdAt": "2022-04-15T19:02:19.436Z",
+      "id": 4
     }
   ]
 }

@@ -30,7 +30,7 @@ export function DashBoard(){
                   />
                 </div>
                 <div className="card2">
-                <TransactionTable />  
+                    <TransactionTable />  
                 </div>
             </div>
           </TransactionsContext.Provider>
