@@ -1,16 +1,23 @@
 import '../../styles/dashboard/dashboard.css';
 
+import { useContext } from 'react';
+
 import imgCifrao from '../../assets/cifrao.svg';
 import imgCreditCard1 from '../../assets/credit-card-1.svg';
-import { TransactionsContext } from '../../TransactionsContext';
+import { TransactionsContext, TransactionsProvider } from '../../TransactionsContext';
 import { SiderBar } from '../Sidebar/SideBar';
 import { Card } from './Card';
 import { TransactionTable } from './TransactionTable';
 
+
 export function DashBoard(){
 
+  const transactions = useContext(TransactionsContext);
+
+  console.log(transactions)
+
     return(
-          <TransactionsContext.Provider value ={[]}>
+          <TransactionsProvider>
             <div className="dashboard">
                 <div className="sidebar">
                   <SiderBar/>
@@ -21,19 +28,23 @@ export function DashBoard(){
                     titleCenter ="Saldo disponível"
                     imageUrl= {imgCifrao}
                     nameImage="Cifrão"
+                    titleFooter="Transações"
+                    valueFooter="1000"
                   /> 
                   <Card 
                     title="Cartão de Credito"
                     titleCenter ="Fatura atual"
                     imageUrl= {imgCreditCard1}
                     nameImage="Cartão de Credito"
+                    titleFooter="Limite disponível"
+                    valueFooter="1000"
                   />
                 </div>
                 <div className="card2">
                     <TransactionTable />  
                 </div>
             </div>
-          </TransactionsContext.Provider>
+          </TransactionsProvider>
     )
 }
 

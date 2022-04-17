@@ -1,13 +1,32 @@
-import { createContext, FormEvent, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
+import { api } from './services/api';
 
-export const TransactionsContext = createContext([]);
+interface Transaction {
+    id: number;
+    description: string;
+    value: number;
+    type: string;
+    createdAt: string;
+}
 
-export function TransactionsProvider() {
+interface TransactionsProviderProps {
+    children: ReactNode;
+}
+
+export const TransactionsContext = createContext<Transaction[]>([]);
+
+export function TransactionsProvider({ children }: TransactionsProviderProps) {
+    const [transactions, setTransactions] = useState<Transaction[]>([]);
+
+    useEffect(() => {
+      api.get('transactions')
+        .then(response => setTransactions(response.data))
+    },[])
 
     return(
-        <TransactionsContext.Provider value={[]}>
-
+        <TransactionsContext.Provider value={transactions}>
+            { children }
         </TransactionsContext.Provider>
     )
 }

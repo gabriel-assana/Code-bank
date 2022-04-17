@@ -38,6 +38,7 @@
     height: 40%;
     font-family: 'Roboto', sans-serif;
 }
+
 .card-body .title{
     font-weight: 400;
     color: #9B9B9B;
@@ -48,5 +49,24 @@
     font-weight: 700;
     font-size: 30px;
     color: #010101
+
+}
+
+.card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #9B9B9B
+}
+
+.card-footer .value-footer {
+    font-weight: 700;
+    font-size: 30px;
+    color: #db3d64
 
 }

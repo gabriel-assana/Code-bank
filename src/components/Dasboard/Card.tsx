@@ -5,12 +5,14 @@ import { formatter } from '../../utils/util';
 interface CardProps {
   title: string; 
   titleCenter: string;
+  titleFooter: string;
+  valueFooter: string;
   nameImage: string;
   imageUrl: string;
 }
 
 
-export function Card({imageUrl,nameImage,title,titleCenter}:CardProps){
+export function Card({imageUrl,nameImage,title,titleCenter,titleFooter,valueFooter}:CardProps){
 
     const balances = 1000
 
@@ -18,14 +20,22 @@ export function Card({imageUrl,nameImage,title,titleCenter}:CardProps){
      
     return(
         <div className="card">
+          
           <div className="card-header">
             <img src={imageUrl} alt={nameImage}></img>
             <span>{title}</span>
           </div>
+          
           <div className="card-body">
             <span className="title">{titleCenter}</span>
-                <span className="value">{newBalance}</span>  
-            </div>
+            <span className="value">{newBalance}</span>  
+          </div>
+
+          <div className="card-footer">
+            <span className="title">{titleFooter}</span>
+            <span className="value-footer">{valueFooter}</span>  
+          </div>
+        
         </div>
     )
 }
