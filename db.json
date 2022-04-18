@@ -27,12 +27,6 @@
       "type": "Cartão de Crédito",
       "createdAt": "2022-04-15T19:02:19.436Z",
       "id": 4
-    },
-    {
-      "value": 0,
-      "description": "dasds",
-      "type": "Deposito",
-      "id": 5
     }
   ]
 }

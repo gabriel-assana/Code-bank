@@ -1,10 +1,16 @@
 import '../../styles/form/Form.css';
 
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useContext, useState } from 'react';
 
-import { api } from '../../services/api';
+import { TransactionsContext } from '../../TransactionsContext';
 
-export function FormTransfers(){
+interface FormTransferProps {
+    onRequestClose: () => void
+}
+
+export function FormTransfers({onRequestClose}:FormTransferProps){
+
+    const { createTransactionTransfer } = useContext(TransactionsContext)
 
     const [value, setValue] = useState(0)
     const [agency, setAgency] = useState(0)
@@ -15,16 +21,15 @@ export function FormTransfers(){
     function handleCreateTransfer(event: FormEvent) {
         event.preventDefault();    
         
-        const transferData = {
+        createTransactionTransfer({
             value,
             description,
-            type: "Transferência",
-            createdAt: new Date()
-        }
+            type:"Transferência"
+        })
         
-         api.post('transactions', transferData)
+        onRequestClose()
     }
-    
+        
 
     return(
         <>

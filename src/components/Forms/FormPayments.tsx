@@ -6,7 +6,11 @@ import credito from '../../assets/credit-card.svg';
 import debito from '../../assets/money.svg';
 import { api } from '../../services/api';
 
-export function FormPayments(){
+interface FormPaymentsProps {
+    onRequestClose: () => void
+}
+
+export function FormPayments({onRequestClose}: FormPaymentsProps){
 
     const [value, setValue] = useState(0)
     const [description, setDescription] = useState('')
@@ -22,8 +26,11 @@ export function FormPayments(){
             createdAt: new Date()
         }
         
-         api.post('transactions', paymentData)
+        api.post('transactions', paymentData)
+        
+        onRequestClose()
     }
+
 
     return(
         <>

@@ -11,6 +11,8 @@ interface Transaction {
 }
 
 type TransactionDeposit = Omit<Transaction, 'id' |'createdAt'>;
+type TransactionPayment = Omit<Transaction, 'id' |'createdAt'>;
+type TransactionTransfer = Omit<Transaction, 'id' |'createdAt'>;
 
 interface TransactionsProviderProps {
     children: ReactNode;
@@ -19,6 +21,9 @@ interface TransactionsProviderProps {
 interface TransactionsContextData {
     transactions: Transaction[];
     createTransactionDeposit: (depositData:TransactionDeposit) => void;
+    createTransactionPayment: (depositData:TransactionPayment) => void;
+    createTransactionTransfer: (depositData:TransactionTransfer) => void;
+    
 }
 
 export const TransactionsContext = createContext<TransactionsContextData>(
@@ -38,8 +43,25 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
          api.post('transactions', depositData)
     }
 
+    function createTransactionPayment(paymentData:TransactionDeposit){
+    
+        api.post('transactions', paymentData)
+   }
+
+   function createTransactionTransfer(transferData:TransactionDeposit){
+    
+        api.post('transactions', transferData)
+    }
+
+    
+
     return(
-        <TransactionsContext.Provider value={{transactions, createTransactionDeposit}}>
+        <TransactionsContext.Provider 
+                value={{ transactions, 
+                         createTransactionDeposit,
+                         createTransactionPayment,
+                         createTransactionTransfer }}
+        >
             { children }
         </TransactionsContext.Provider>
     )

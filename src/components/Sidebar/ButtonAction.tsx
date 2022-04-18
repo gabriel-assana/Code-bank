@@ -44,8 +44,8 @@ export function ButtonAction ({title}:ButtonActionProps) {
 
               {  
                 title === "Depositar" ? <FormDeposit onRequestClose={handleCloseNewTransactionModal}/> :  
-                title === "Pagamentos" ? <FormPayments/> : 
-                title === "Transferir" ? <FormTransfers/> : null
+                title === "Pagamentos" ? <FormPayments onRequestClose={handleCloseNewTransactionModal}/> : 
+                title === "Transferir" ? <FormTransfers onRequestClose={handleCloseNewTransactionModal} /> : null
               }              
 
             </Modal>

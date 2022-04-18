@@ -4,12 +4,12 @@ import React, { FormEvent, useContext, useState } from 'react';
 
 import { TransactionsContext } from '../../TransactionsContext';
 
-interface FormDeposit {
+interface FormDepositProps {
     onRequestClose: () => void
 }
 
 
-export function FormDeposit({ onRequestClose }:FormDeposit){
+export function FormDeposit({ onRequestClose }:FormDepositProps){
 
     const { createTransactionDeposit } = useContext(TransactionsContext)
 
@@ -27,13 +27,6 @@ export function FormDeposit({ onRequestClose }:FormDeposit){
  
 
         onRequestClose();
-        
-/*         const depositData = {
-            value,
-            description,
-            type: "Deposito",
-            createdAt: new Date()
-        } */
     }
 
     return(
