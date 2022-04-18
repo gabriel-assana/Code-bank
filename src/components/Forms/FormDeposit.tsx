@@ -1,25 +1,39 @@
 import '../../styles/form/Form.css';
 
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useContext, useState } from 'react';
 
-import { api } from '../../services/api';
+import { TransactionsContext } from '../../TransactionsContext';
 
-export function FormDeposit(){
+interface FormDeposit {
+    onRequestClose: () => void
+}
+
+
+export function FormDeposit({ onRequestClose }:FormDeposit){
+
+    const { createTransactionDeposit } = useContext(TransactionsContext)
 
     const [value, setValue] = useState(0)
     const [description, setDescription] = useState('')
 
     function handleCreateDeposit(event: FormEvent) {
         event.preventDefault();    
+               
+       createTransactionDeposit({
+            value,
+            description,
+            type:"Deposito"
+        })
+ 
 
-        const depositData = {
+        onRequestClose();
+        
+/*         const depositData = {
             value,
             description,
             type: "Deposito",
             createdAt: new Date()
-        }
-
-         api.post('transactions', depositData)
+        } */
     }
 
     return(

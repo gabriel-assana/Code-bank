@@ -1,12 +1,12 @@
 import '../../styles/dashboard/transactiontable.css';
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
 import { TransactionsContext } from '../../TransactionsContext';
 
 export function TransactionTable () {
 
-    const transactions = useContext(TransactionsContext);
+    const {transactions} = useContext(TransactionsContext);
 
   return(
 

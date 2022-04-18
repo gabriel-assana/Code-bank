@@ -20,17 +20,18 @@ export function ButtonAction ({title}:ButtonActionProps) {
     const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
 
     function handleOpenNewTransactionModal(){
-    setIsNewTransactionModalOpen(true);
-
+      setIsNewTransactionModalOpen(true);
+      
     }
 
     function handleCloseNewTransactionModal(){
-    setIsNewTransactionModalOpen(false);
+      setIsNewTransactionModalOpen(false);
     }
+
 
     return(
      <>
-        <div className="buttonAction" onClick={() => handleOpenNewTransactionModal()} >
+        <div className="buttonAction" onClick={handleOpenNewTransactionModal} >
             <img className="pix" src={pix} alt={title}/>
             <span className="btn-title">{title}</span>    
 
@@ -38,10 +39,11 @@ export function ButtonAction ({title}:ButtonActionProps) {
                isOpen={isNewTransactionModalOpen}
                onRequestClose={handleCloseNewTransactionModal}
                overlayClassName="react-modal-overlay"
-               className="react-modal-content"
+               className="react-modal-content" 
             >
-              {               
-                title === "Depositar" ? <FormDeposit/> :  
+
+              {  
+                title === "Depositar" ? <FormDeposit onRequestClose={handleCloseNewTransactionModal}/> :  
                 title === "Pagamentos" ? <FormPayments/> : 
                 title === "Transferir" ? <FormTransfers/> : null
               }              

@@ -14,6 +14,7 @@ export function SiderBar(){
             <ButtonAction title="Depositar" />
             <ButtonAction title="Pagamentos" />
             <ButtonAction title="Transferir"/>
+
         </div>
 
     )

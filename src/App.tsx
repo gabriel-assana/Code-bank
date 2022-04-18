@@ -6,9 +6,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="container-principal">
+      <main className="container-principal">
         <DashBoard/>
-      </header>
+      </main>
     </div>
   );
 }
