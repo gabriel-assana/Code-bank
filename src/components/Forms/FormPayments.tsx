@@ -1,10 +1,10 @@
 import '../../styles/form/Form.css';
 
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useContext, useState } from 'react';
 
 import credito from '../../assets/credit-card.svg';
 import debito from '../../assets/money.svg';
-import { api } from '../../services/api';
+import { TransactionsContext } from '../../TransactionsContext';
 
 interface FormPaymentsProps {
     onRequestClose: () => void
@@ -12,22 +12,21 @@ interface FormPaymentsProps {
 
 export function FormPayments({onRequestClose}: FormPaymentsProps){
 
+    const { createTransactionPayment } = useContext(TransactionsContext);
+
     const [value, setValue] = useState(0)
     const [description, setDescription] = useState('')
     const [type, setType] = useState('')
 
     function handleCreatePayment(event: FormEvent) {
         event.preventDefault();    
-        
-        const paymentData = {
+
+        createTransactionPayment({
             value,
             description,
-            type,
-            createdAt: new Date()
-        }
-        
-        api.post('transactions', paymentData)
-        
+            type:"Transferência"
+        })
+              
         onRequestClose()
     }
 
