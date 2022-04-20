@@ -24,7 +24,7 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
         createTransactionPayment({
             value,
             description,
-            type:"Transferência"
+            type
         })
               
         onRequestClose()

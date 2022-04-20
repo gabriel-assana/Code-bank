@@ -8,7 +8,6 @@ interface FormDepositProps {
     onRequestClose: () => void
 }
 
-
 export function FormDeposit({ onRequestClose }:FormDepositProps){
 
     const { createTransactionDeposit } = useContext(TransactionsContext)
@@ -16,19 +15,18 @@ export function FormDeposit({ onRequestClose }:FormDepositProps){
     const [value, setValue] = useState(0)
     const [description, setDescription] = useState('')
 
-    function handleCreateDeposit(event: FormEvent) {
+   async function handleCreateDeposit(event: FormEvent) {
         event.preventDefault();    
                
-       createTransactionDeposit({
+       await createTransactionDeposit({
             value,
             description,
             type:"Deposito"
         })
  
-
         onRequestClose();
     }
-
+    
     return(
         <>
             <form onSubmit={handleCreateDeposit}>

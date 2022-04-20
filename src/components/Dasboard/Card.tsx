@@ -5,6 +5,7 @@ import { formatter } from '../../utils/util';
 interface CardProps {
   title: string; 
   titleCenter: string;
+  debitAccount: number;
   titleFooter: string;
   valueFooter: string;
   nameImage: string;
@@ -12,12 +13,8 @@ interface CardProps {
 }
 
 
-export function Card({imageUrl,nameImage,title,titleCenter,titleFooter,valueFooter}:CardProps){
-
-    const balances = 1000
-
-    const newBalance = formatter.format(balances)
-     
+export function Card({imageUrl,nameImage,title,debitAccount,titleCenter,titleFooter,valueFooter}:CardProps){
+         
     return(
         <div className="card">
           
@@ -28,7 +25,7 @@ export function Card({imageUrl,nameImage,title,titleCenter,titleFooter,valueFoot
           
           <div className="card-body">
             <span className="title">{titleCenter}</span>
-            <span className="value">{newBalance}</span>  
+            <span className="value">{formatter.format(debitAccount)}</span>  
           </div>
 
           <div className="card-footer">

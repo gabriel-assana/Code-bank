@@ -20,9 +20,9 @@ interface TransactionsProviderProps {
 
 interface TransactionsContextData {
     transactions: Transaction[];
-    createTransactionDeposit: (depositData:TransactionDeposit) => void;
-    createTransactionPayment: (depositData:TransactionPayment) => void;
-    createTransactionTransfer: (depositData:TransactionTransfer) => void;
+    createTransactionDeposit: (depositData:TransactionDeposit) => Promise<void>;
+    createTransactionPayment: (paymentData:TransactionPayment) => Promise<void>;
+    createTransactionTransfer: (transferData:TransactionTransfer) => Promise<void>;
     
 }
 
@@ -38,21 +38,52 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
         .then(response => setTransactions(response.data))
     },[])
 
-    function createTransactionDeposit(depositData:TransactionDeposit){
+    async function createTransactionDeposit(depositData:TransactionDeposit){
     
-         api.post('transactions', depositData)
+        const response = await api.post('transactions', {
+            ...depositData,
+            type: "Deposito",
+            createdAt: new Date(),
+        })
+
+        const newTransactionDeposit = response.data;
+
+        setTransactions([
+            ...transactions,
+            newTransactionDeposit
+        ]);
     }
 
-    function createTransactionPayment(paymentData:TransactionDeposit){
+   async function createTransactionPayment(paymentData:TransactionPayment){
     
-        api.post('transactions', paymentData)
+        const response = await api.post('transactions', {
+            ...paymentData,
+            createdAt: new Date()
+        })
+
+        const newTransactionPayment = response.data;
+
+        setTransactions([
+            ...transactions,
+            newTransactionPayment
+        ]);
+
    }
 
-   function createTransactionTransfer(transferData:TransactionDeposit){
+   async function createTransactionTransfer(transferData:TransactionTransfer){
     
-        api.post('transactions', transferData)
-    }
+        const response = await api.post('transactions', {
+            ...transferData,
+            createdAt: new Date()
+        })
 
+        const newTransactionTransfer = response.data;
+
+        setTransactions([
+            ...transactions,
+            newTransactionTransfer
+        ]);
+    }
     
 
     return(
@@ -60,7 +91,8 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
                 value={{ transactions, 
                          createTransactionDeposit,
                          createTransactionPayment,
-                         createTransactionTransfer }}
+                         createTransactionTransfer 
+                        }}
         >
             { children }
         </TransactionsContext.Provider>

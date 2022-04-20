@@ -6,7 +6,7 @@ import { TransactionsContext } from '../../TransactionsContext';
 
 export function TransactionTable () {
 
-    const {transactions} = useContext(TransactionsContext);
+    const { transactions } = useContext(TransactionsContext);
 
   return(
 
@@ -24,6 +24,7 @@ export function TransactionTable () {
 
           <tbody>
             {transactions.map(transaction => {
+
               return (
                 <tr key={transaction.id}>
                   <td>{transaction.type}</td>
