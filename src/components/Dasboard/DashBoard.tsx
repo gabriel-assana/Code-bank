@@ -14,12 +14,32 @@ export function DashBoard(){
 
  const { transactions } = useContext(TransactionsContext);
 
-  var debitAccount = transactions.reduce(( acc, transaction ) => { 
+  var summaryAccount = transactions.reduce(( acc, transaction ) => { 
     if (transaction.type === 'Deposito'){
-      return acc + transaction.value;
+       acc.debitAccount += transaction.value;
+       acc.totalTransaction += transaction.value;
     }
+    else if (transaction.type === 'Transferência') {
+       acc.debitAccount -= transaction.value;
+       acc.totalTransaction += transaction.value;
+    }
+    else if (transaction.type === 'Débito em Conta'){
+       acc.debitAccount -= transaction.value;
+       acc.totalTransaction += transaction.value;
+    }
+
+    else if (transaction.type === 'Cartão de Crédito'){
+      acc.creditAccount += transaction.value; 
+      acc.creditLimit -= transaction.value;
+    }
+   
     return acc;
-  }, 0); 
+  }, {
+    debitAccount: 0,
+    creditAccount: 0,
+    totalTransaction: 0,
+    creditLimit: 1000
+  }); 
 
   
 
@@ -34,18 +54,18 @@ export function DashBoard(){
                     titleCenter ="Saldo disponível"
                     imageUrl= {imgCifrao}
                     nameImage="Cifrão"
-                    debitAccount = {debitAccount}
+                    debitAccount = {summaryAccount.debitAccount}
                     titleFooter="Transações"
-                    valueFooter={ 1000 }
+                    valueFooter={ summaryAccount.totalTransaction }
                   /> 
                   <Card 
                     title="Cartão de Credito"
                     titleCenter ="Fatura atual"
-                    debitAccount = {debitAccount}
+                    debitAccount = {summaryAccount.creditAccount}
                     imageUrl= {imgCreditCard1}
                     nameImage="Cartão de Credito"
                     titleFooter="Limite disponível"
-                    valueFooter={ 1000 }
+                    valueFooter={ summaryAccount.creditLimit }
                   />
                 </div>
                 <div className="card2">
