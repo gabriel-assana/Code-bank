@@ -3,7 +3,7 @@ import '../../styles/dashboard/transactiontable.css';
 import React, { useContext } from 'react';
 
 import { TransactionsContext } from '../../TransactionsContext';
-import { formatter } from '../../utils/util';
+import { formatterDate, formatterValue } from '../../utils/util';
 
 export function TransactionTable () {
 
@@ -30,8 +30,12 @@ export function TransactionTable () {
                 <tr key={transaction.id}>
                   <td>{transaction.type}</td>
                   <td>{transaction.description}</td>
-                  <td>{formatter.format(transaction.value)}</td>
-                  <td>{transaction.createdAt}</td>
+                  <td>{formatterValue.format(transaction.value)}</td>
+                  <td>
+                    {formatterDate.format(
+                        new Date(transaction.createdAt)
+                      )}
+                  </td>
                 </tr>
               )
             })}

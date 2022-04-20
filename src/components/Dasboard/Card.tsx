@@ -1,6 +1,6 @@
 import '../../styles/dashboard/card.css';
 
-import { formatter } from '../../utils/util';
+import { formatterValue } from '../../utils/util';
 
 interface CardProps {
   title: string; 
@@ -34,12 +34,12 @@ export function Card(
           
           <div className="card-body">
             <span className="title">{titleCenter}</span>
-            <span className="value">{formatter.format(debitAccount)}</span>  
+            <span className="value">{formatterValue.format(debitAccount)}</span>  
           </div>
 
           <div className="card-footer">
             <span className="title">{titleFooter}</span>
-            <span className="value-footer">{formatter.format(valueFooter)}</span>  
+            <span className="value-footer">{formatterValue.format(valueFooter)}</span>  
           </div>
         
         </div>
