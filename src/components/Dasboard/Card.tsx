@@ -1,7 +1,5 @@
 import '../../styles/dashboard/card.css';
 
-import { useContext } from 'react';
-
 import { formatter } from '../../utils/util';
 
 interface CardProps {

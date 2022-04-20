@@ -1,6 +1,6 @@
 import '../../styles/dashboard/dashboard.css';
 
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 import imgCifrao from '../../assets/cifrao.svg';
 import imgCreditCard1 from '../../assets/credit-card-1.svg';
