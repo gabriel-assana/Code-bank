@@ -1,5 +1,7 @@
 import '../../styles/dashboard/card.css';
 
+import { useContext } from 'react';
+
 import { formatter } from '../../utils/util';
 
 interface CardProps {
@@ -7,14 +9,23 @@ interface CardProps {
   titleCenter: string;
   debitAccount: number;
   titleFooter: string;
-  valueFooter: string;
+  valueFooter: number;
   nameImage: string;
   imageUrl: string;
 }
 
 
-export function Card({imageUrl,nameImage,title,debitAccount,titleCenter,titleFooter,valueFooter}:CardProps){
-         
+export function Card(
+  {
+   imageUrl,
+   nameImage,
+   title,
+   debitAccount,
+   titleCenter,
+   titleFooter,
+   valueFooter
+  }:CardProps){
+           
     return(
         <div className="card">
           
@@ -30,7 +41,7 @@ export function Card({imageUrl,nameImage,title,debitAccount,titleCenter,titleFoo
 
           <div className="card-footer">
             <span className="title">{titleFooter}</span>
-            <span className="value-footer">{valueFooter}</span>  
+            <span className="value-footer">{formatter.format(valueFooter)}</span>  
           </div>
         
         </div>
