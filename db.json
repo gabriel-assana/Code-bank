@@ -27,6 +27,13 @@
       "type": "Cartão de Crédito",
       "createdAt": "2022-04-20T12:15:59.673Z",
       "id": 4
+    },
+    {
+      "value": 1000,
+      "description": "13º Salario",
+      "type": "Deposito",
+      "createdAt": "2022-12-24T00:13:54.732Z",
+      "id": 5
     }
   ]
 }

@@ -2,10 +2,11 @@ import '../../styles/form/Form.css';
 
 import React, { FormEvent, useContext, useState } from 'react';
 
+import close from '../../assets/close.svg';
 import { TransactionsContext } from '../../TransactionsContext';
 
 interface FormTransferProps {
-    onRequestClose: () => void
+    onRequestClose: () => void;
 }
 
 export function FormTransfers({onRequestClose}:FormTransferProps){
@@ -33,7 +34,11 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
 
     return(
         <>
-            <form onSubmit={handleCreateTransfer}>
+            <form>
+
+            <button className="btn-close" onClick={onRequestClose}>  
+                <img src={close} alt="Botão de Fechar" />
+            </button>
 
                 <h2>Tranferir</h2>
 
@@ -60,6 +65,7 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
                 <button 
                     type="submit"
                     className="btn-submit"
+                    onClick={handleCreateTransfer}
                 >
                    Tranferir
                 </button>

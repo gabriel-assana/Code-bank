@@ -2,10 +2,11 @@ import '../../styles/form/Form.css';
 
 import React, { FormEvent, useContext, useState } from 'react';
 
+import close from '../../assets/close.svg';
 import { TransactionsContext } from '../../TransactionsContext';
 
 interface FormDepositProps {
-    onRequestClose: () => void
+    onRequestClose: () => void;
 }
 
 export function FormDeposit({ onRequestClose }:FormDepositProps){
@@ -17,6 +18,7 @@ export function FormDeposit({ onRequestClose }:FormDepositProps){
 
    async function handleCreateDeposit(event: FormEvent) {
         event.preventDefault();    
+        console.log(event)
                
        await createTransactionDeposit({
             value,
@@ -29,7 +31,12 @@ export function FormDeposit({ onRequestClose }:FormDepositProps){
     
     return(
         <>
-            <form onSubmit={handleCreateDeposit}>
+            
+            <form>
+                
+            <button className="btn-close" onClick={onRequestClose}>  
+                <img src={close} alt="Botão de Fechar" />
+            </button>
 
                 <h2>Depositos</h2>
 
@@ -49,6 +56,7 @@ export function FormDeposit({ onRequestClose }:FormDepositProps){
                 <button 
                     type="submit"
                     className="btn-submit"
+                    onClick={handleCreateDeposit}
                 >
                     Depositar
                 </button>

@@ -1,13 +1,14 @@
 import '../../styles/form/Form.css';
 
-import React, { FormEvent, useContext, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 
+import close from '../../assets/close.svg';
 import credito from '../../assets/credit-card.svg';
 import debito from '../../assets/money.svg';
 import { TransactionsContext } from '../../TransactionsContext';
 
 interface FormPaymentsProps {
-    onRequestClose: () => void
+    onRequestClose: () => void;
 }
 
 export function FormPayments({onRequestClose}: FormPaymentsProps){
@@ -33,7 +34,11 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
 
     return(
         <>
-            <form onSubmit={handleCreatePayment}>
+            <form>
+
+            <button className="btn-close" onClick={onRequestClose}>  
+                <img src={close} alt="Botão de Fechar" />
+            </button>
 
                 <h2>Pagamentos</h2>
 
@@ -74,6 +79,7 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
                 <button 
                     type="submit"
                     className="btn-submit"
+                    onClick={handleCreatePayment}
                 >
                         Pagar
                 </button>
