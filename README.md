@@ -1,5 +1,3 @@
 # Code Bank  
 
-https://code-bank-react.netlify.app/
-
-
+https://code-bank-react.netlify.app
