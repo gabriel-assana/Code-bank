@@ -19,7 +19,7 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-✔️ JavaScript
+✔️ TypeScript
 
 ✔️ React
 
@@ -32,6 +32,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ✔️ Axios
 
 ✔️ Context-API
+
+✔️ Json-Server
 
 <h2>Pré-requisitos</h2>
 
@@ -50,3 +52,10 @@ $ cd Code-bank
 $ npm install
 # Proximo passa para iniciar a aplicação e digitar o comando abaixo no terminal.
 $ npm start
+```
+# 👨‍💻 Rodando o Back End.
+
+```bash
+# Levantando o Backend
+$ yarn server
+```
