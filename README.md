@@ -12,7 +12,7 @@
 </p>
 
 <h1 align="center">
-  <img alt="logo" title="#logo" src="images/codebank.gif" />
+  <img alt="logo" title="#logo" src="./src/assets/codebank.gif" />
 </h1>
 
 ## :rocket: Tecnologias
