@@ -1,4 +1,8 @@
 <h1 align="center">
+  <img src="./src/assets/codebank.png" height="100px" alt="Code Bank"/>
+</h1>
+
+<h1 align="center">
   Code Bank
 </h1>
 
@@ -8,7 +12,7 @@
 </p>
 
 <h1 align="center">
-  <img alt="logo" title="#logo" src="images/spa.gif" />
+  <img alt="logo" title="#logo" src="images/codebank.gif" />
 </h1>
 
 ## :rocket: Tecnologias
