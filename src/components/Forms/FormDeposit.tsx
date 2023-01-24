@@ -40,13 +40,16 @@ export function FormDeposit({ onRequestClose }:FormDepositProps){
 
                 <h2>Depositos</h2>
 
-                <input 
-                    type="number"
-                    placeholder="Valor"
-                    value={value}
-                    onChange={event => setValue(Number(event.target.value))}
-                />
-
+                <label htmlFor="deposit">
+                    Qual valor gostaria de depositar ?
+                    <input 
+                        id="deposit"
+                        type="number"
+                        placeholder="Valor"
+                        value={value}
+                        onChange={event => setValue(Number(event.target.value))}
+                    />
+                </label>
                 <input 
                     placeholder="Descrição do deposito"
                     value={description}

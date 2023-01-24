@@ -42,26 +42,36 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
 
                 <h2>Tranferir</h2>
 
-                    <input 
+                <label htmlFor="transfer-value">
+                    Qual valor gostaria de transferir ?
+                    <input
+                        id="transfer-value"
                         className="input-value" 
                         placeholder="Valor"
                         value={value}
                         onChange={event => setValue(Number(event.target.value))}
-                    />        
-                <input 
-                    type="number" 
-                    placeholder="Agência"
-                    value={agency}
-                    onChange={event => setAgency(Number(event.target.value))}
-                />
-                
-                <input 
-                    type="number" 
-                    placeholder="Conta"
-                    value={account}
-                    onChange={event => setAccount(Number(event.target.value))}
-                />
-                
+                    /> 
+                </label>     
+                <label htmlFor="agency">
+                    Agência
+                    <input
+                        id="agency"
+                        type="number" 
+                        placeholder="Agência"
+                        value={agency}
+                        onChange={event => setAgency(Number(event.target.value))}
+                    />
+                </label>    
+                <label htmlFor="account">
+                    Conta
+                    <input 
+                        id="account"
+                        type="number" 
+                        placeholder="Conta"
+                        value={account}
+                        onChange={event => setAccount(Number(event.target.value))}
+                    />
+                </label>    
                 <button 
                     type="submit"
                     className="btn-submit"

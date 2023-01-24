@@ -42,12 +42,18 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
 
                 <h2>Pagamentos</h2>
 
-                <input 
-                    type="number"
-                    placeholder="Valor a ser pago"
-                    value={value}
-                    onChange={event => setValue(Number(event.target.value))}
-                />
+                <label htmlFor="payment">
+                    Qual valor gostaria de realizar o pagamento ?
+                    <input
+                        id="payment"
+                        type="number"
+                        placeholder="Valor a ser pago"
+                        value={value}
+                        onChange={event => setValue(Number(event.target.value))}
+                    />
+
+                </label>
+
 
                 <div className="container-btns">
                     <button
