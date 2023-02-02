@@ -18,15 +18,20 @@ export function FormDeposit({ onRequestClose }:FormDepositProps){
 
    async function handleCreateDeposit(event: FormEvent) {
         event.preventDefault();    
-        console.log(event)
-               
-       await createTransactionDeposit({
-            value,
-            description,
-            type:"Deposito"
-        })
+        
+        if(value === 0){
+            alert("Por favor digite um valor superior a 0 !")
+        }else{
+
+            await createTransactionDeposit({
+                    value,
+                    description,
+                    type:"Deposito"
+                })
+                
+            onRequestClose();
+        }
  
-        onRequestClose();
     }
     
     return(

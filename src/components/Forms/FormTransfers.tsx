@@ -22,13 +22,19 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
     function handleCreateTransfer(event: FormEvent) {
         event.preventDefault();    
         
-        createTransactionTransfer({
-            value,
-            description,
-            type:"Transferência"
-        })
-        
-        onRequestClose()
+        if(value == 0 && agency == 0 && account == 0){
+            alert("Por favor, digite valor, agencia e conta para realizar a transferência!")
+        }else{
+            createTransactionTransfer({
+                value,
+                description,
+                type:"Transferência"
+            })
+            
+            onRequestClose()
+        }
+
+
     }
         
 

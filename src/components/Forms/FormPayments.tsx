@@ -20,15 +20,23 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
     const [type, setType] = useState('')
 
     function handleCreatePayment(event: FormEvent) {
-        event.preventDefault();    
-
-        createTransactionPayment({
-            value,
-            description,
-            type
-        })
-              
-        onRequestClose()
+        event.preventDefault(); 
+        
+        if(value == 0 && type == ""){
+            alert("Por favor digite um valor superior a 0 e escolha a forma de pagamento!")
+        }else if(value == 0 && type !== ""){
+            alert("Por favor digite um valor superior a 0!")          
+        }else if(value !== 0 && type == ""){
+            alert("Por favor escolha a forma de pagamento!") 
+        }else{
+            createTransactionPayment({
+                value,
+                description,
+                type
+            })
+                         
+            onRequestClose()
+        }
     }
 
 
