@@ -12,10 +12,10 @@ import { FormTransfers } from '../Forms/FormTransfers';
 Modal.setAppElement('#root')
 
 interface ButtonActionProps { 
-    title: string,
+  transactionType: string,
 }
 
-export function ButtonAction ({title}:ButtonActionProps) {
+export function ButtonAction ({transactionType}:ButtonActionProps) {
 
     const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
 
@@ -32,8 +32,8 @@ export function ButtonAction ({title}:ButtonActionProps) {
     return(
      <>
         <div className="buttonAction" onClick={handleOpenNewTransactionModal} >
-            <img className="pix" src={pix} alt={title}/>
-            <span className="btn-title">{title}</span>    
+            <img className="pix" src={pix} alt={transactionType}/>
+            <span className="btn-title">{transactionType}</span>    
 
             <Modal 
                isOpen={isNewTransactionModalOpen}
@@ -43,9 +43,9 @@ export function ButtonAction ({title}:ButtonActionProps) {
             >
 
               {  
-                title === "Depositar" ? <FormDeposit onRequestClose={handleCloseNewTransactionModal}/> :  
-                title === "Pagamentos" ? <FormPayments onRequestClose={handleCloseNewTransactionModal}/> : 
-                title === "Transferir" ? <FormTransfers  onRequestClose={handleCloseNewTransactionModal} /> : null
+                transactionType === "Depositar" ? <FormDeposit onRequestClose={handleCloseNewTransactionModal}/> :  
+                transactionType === "Pagamentos" ? <FormPayments onRequestClose={handleCloseNewTransactionModal}/> : 
+                transactionType === "Transferir" ? <FormTransfers  onRequestClose={handleCloseNewTransactionModal} /> : null
               }              
 
             </Modal>

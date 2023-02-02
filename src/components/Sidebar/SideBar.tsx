@@ -11,9 +11,9 @@ export function SiderBar(){
             
             <img className="logo" src={logo} alt="Code Bank" />
             
-            <ButtonAction title="Depositar" />
-            <ButtonAction title="Pagamentos" />
-            <ButtonAction title="Transferir"/>
+            <ButtonAction transactionType="Depositar" />
+            <ButtonAction transactionType="Pagamentos" />
+            <ButtonAction transactionType="Transferir"/>
 
         </div>
 
