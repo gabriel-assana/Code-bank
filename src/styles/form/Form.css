@@ -104,6 +104,10 @@ input  {
     background: #f8003e;
  }    
 
+.type-card:active{
+    background: #f8003e;
+}
+
 .type-card img {
     width: 30px;
     height: 30px;
