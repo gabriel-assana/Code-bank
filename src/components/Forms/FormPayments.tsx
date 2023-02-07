@@ -44,9 +44,9 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
         <>
             <form>
 
-            <button className="btn-close" onClick={onRequestClose}>  
-                <img src={close} alt="Botão de Fechar" />
-            </button>
+                <button className="btn-close" onClick={onRequestClose}>  
+                    <img src={close} alt="Botão de Fechar" />
+                </button>
 
                 <h2>Pagamentos</h2>
 

@@ -22,21 +22,24 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
     function handleCreateTransfer(event: FormEvent) {
         event.preventDefault();    
         
-        if(value == 0 && agency == 0 && account == 0){
-            alert("Por favor, digite valor, agencia e conta para realizar a transferência!")
-        }else{
-            createTransactionTransfer({
-                value,
-                description,
-                type:"Transferência"
-            })
-            
-            onRequestClose()
-        }
-
-
-    }
-        
+            if(value == 0 && agency == 0 && account == 0){
+                alert("Por favor, digite o valor, agencia e conta para realizar a transferência!");
+            }else if( value >= 0 && agency == 0 && account == 0){
+                alert("Por favor, digite agencia e conta para realizar a transferência!");
+            }else if( value >= 0 && agency == 0 && account !== 0){
+                alert("Por favor, digite a agência para qual deseja realizar a transferência!");
+            }else if( value >= 0 && agency !== 0 && account == 0){
+                    alert("Por favor, digite a conta para qual deseja realizar a transferência!");
+            }else{ 
+                createTransactionTransfer({
+                    value,
+                    description,
+                    type:"Transferência"
+                })
+                
+                onRequestClose()
+            } 
+    }      
 
     return(
         <>
@@ -62,9 +65,10 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
                     Agência
                     <input
                         id="agency"
-                        type="number" 
                         placeholder="Agência"
                         value={agency}
+                        minLength={4}
+                        maxLength={4}
                         onChange={event => setAgency(Number(event.target.value))}
                     />
                 </label>    
@@ -72,9 +76,10 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
                     Conta
                     <input 
                         id="account"
-                        type="number" 
-                        placeholder="Conta"
+                        placeholder={"Conta"}
                         value={account}
+                        minLength={5}
+                        maxLength={5}
                         onChange={event => setAccount(Number(event.target.value))}
                     />
                 </label>    
