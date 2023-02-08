@@ -36,7 +36,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   
 ✔️ Json-Server
 
-
 <h2>Pré-requisitos</h2>
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
