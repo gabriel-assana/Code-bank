@@ -11,7 +11,7 @@
     margin-top: 2rem;
     margin-left: 3rem;
 
-    background: #FBFBFB;
+    background: #6767f1d8;
     border-radius: 8px;
    
 }
@@ -24,7 +24,7 @@
 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    color: #9B9B9B
+    color: #e5e5e5
 }
 
 .card-header span {
@@ -41,7 +41,7 @@
 
 .card-body .title{
     font-weight: 400;
-    color: #9B9B9B;
+    color: #e5e5e5;
     margin-bottom: 10px
 }
 
@@ -61,12 +61,12 @@
 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    color: #9B9B9B
+    color: #e5e5e5
 }
 
 .card-footer .value-footer {
     font-weight: 700;
     font-size: 30px;
-    color: #db3d64
+    color: #f3688b
 
 }

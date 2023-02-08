@@ -4,7 +4,7 @@
     width: 63.3vw;
     height: 40vh;
     margin-left: 3em;
-    background: #FBFBFB;
+    background: #6767f1d8;
     border-radius: 8px;
     overflow: auto;
 }
@@ -40,6 +40,7 @@ td{
     font-family: 'Roboto', sans-serif;
     padding: 1rem 2rem;
     border: 0;
-    background-color: #e8e8e8;
+    color: #fafafa;
+    background-color: #db3d64;
     
 }
