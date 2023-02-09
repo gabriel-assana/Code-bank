@@ -18,7 +18,7 @@ h2 {
 label {
     width: 100%;
     margin-top: 1em;
-    color: #9B9B9B;
+    color: #ffffff;
 }
 
 input  {
@@ -67,10 +67,11 @@ input  {
     right: 0%;
     top: 0%;
     border: none;
+    background-color: #f5688c
 }
 
 .btn-close img:hover{
-    filter: brightness(50%)
+    filter: brightness(50%);
 }
 
 .container-btns{
@@ -97,15 +98,15 @@ input  {
 }
 
  .type-card:hover{
-     border: 2px solid #f8003e;
+     border: 2px solid #321aab;
  }
 
  .type-card:focus{
-    background: #f8003e;
+    background: #321aab;
  }    
 
 .type-card:active{
-    background: #f8003e;
+    background: #321aab;
 }
 
 .type-card img {
