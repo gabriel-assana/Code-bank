@@ -34,6 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ✔️ Context-API 
 
 
+
   
 ✔️ Json-Server
 
