@@ -8,7 +8,7 @@
 
 <h2 align="center" >Descrição do Projeto</h2>
 <p align="center">
-   Code Bank é uma aplicação que tem a ideia de similar a principais transações de um conta de banco.
+   Code Bank é uma aplicação que tem as ideia de similar a principais transações de um conta de banco.
 </p>
 
 <h1 align="center">
