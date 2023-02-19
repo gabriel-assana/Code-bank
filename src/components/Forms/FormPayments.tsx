@@ -54,7 +54,6 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
                     Qual valor gostaria de realizar o pagamento ?
                     <input
                         id="payment"
-                        type="number"
                         placeholder="Valor a ser pago"
                         value={value}
                         onChange={event => setValue(Number(event.target.value))}

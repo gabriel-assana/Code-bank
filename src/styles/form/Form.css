@@ -28,11 +28,15 @@ input  {
     margin-top: 1em;
     
     border: 0;
-    background: #cfcfcf;
-    color: #000000;
+    background: #8585f6d8;
+    color: #FFFFFF;
 
     font-weight: 400;
     font-size: 1rem;
+}
+
+input::placeholder{
+    color:#FFFFFF
 }
 
 .icon-input{
@@ -88,7 +92,7 @@ input  {
     height: 4rem;;
     border: 1px solid #d7d7d7;
     border-radius: 0.25rem;
-    background: #f5527b;
+    background: #8585f6d8;
     color: #fff;
     
     display: flex;

@@ -39,8 +39,8 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     },[])
 
     async function createTransactionDeposit(depositData:TransactionDeposit){
-    
-        const response = await api.post('transactions', {
+
+        const response = await api.post('transactions', {      
             ...depositData,
             type: "Deposito",
             createdAt: new Date(),

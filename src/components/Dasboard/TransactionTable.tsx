@@ -25,12 +25,11 @@ export function TransactionTable () {
 
           <tbody>
             {transactions.map(transaction => {
-
               return (
                 <tr key={transaction.id}>
                   <td>{transaction.type}</td>
                   <td>{transaction.description}</td>
-                  <td>{formatterValue.format(transaction.value)}</td>
+                  <td>{ formatterValue.format(transaction.value)}</td>
                   <td>
                     {formatterDate.format(
                         new Date(transaction.createdAt)
