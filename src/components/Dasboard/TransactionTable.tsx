@@ -1,6 +1,6 @@
 import '../../styles/dashboard/transactiontable.css';
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { TransactionsContext } from '../../TransactionsContext';
 import { formatterDate, formatterValue } from '../../utils/util';
@@ -8,6 +8,12 @@ import { formatterDate, formatterValue } from '../../utils/util';
 export function TransactionTable () {
 
     const { transactions } = useContext(TransactionsContext);
+
+    const [transactionList, setTransactionList] = useState(transactions);
+
+    useEffect(() => {
+      setTransactionList(transactions);
+    }, [transactions]);
 
   return(
 
@@ -24,7 +30,7 @@ export function TransactionTable () {
           </thead>
 
           <tbody>
-            {transactions.map(transaction => {
+            {transactionList.map(transaction => {
               return (
                 <tr key={transaction.id}>
                   <td>{transaction.type}</td>
