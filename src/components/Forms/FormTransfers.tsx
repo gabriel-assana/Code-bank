@@ -1,6 +1,7 @@
 import '../../styles/form/Form.css';
 
 import React, { FormEvent, useContext, useState } from 'react';
+import CurrencyInput from 'react-currency-input-field';
 
 import close from '../../assets/close.svg';
 import { TransactionsContext } from '../../TransactionsContext';
@@ -13,7 +14,7 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
 
     const { createTransactionTransfer } = useContext(TransactionsContext)
 
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState("0")
     const [agency, setAgency] = useState(0)
     const [account, setAccount] = useState(0)
     const description = "Ag " + agency + " Cc " + account 
@@ -22,24 +23,33 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
     function handleCreateTransfer(event: FormEvent) {
         event.preventDefault();    
         
-            if(value == 0 && agency == 0 && account == 0){
+            if(value == "0" && agency == 0 && account == 0){
                 alert("Por favor, digite o valor, agencia e conta para realizar a transferência!");
-            }else if( value >= 0 && agency == 0 && account == 0){
+            }else if( value >= "0" && agency == 0 && account == 0){
                 alert("Por favor, digite agencia e conta para realizar a transferência!");
-            }else if( value >= 0 && agency == 0 && account !== 0){
+            }else if( value >= "0" && agency == 0 && account !== 0){
                 alert("Por favor, digite a agência para qual deseja realizar a transferência!");
-            }else if( value >= 0 && agency !== 0 && account == 0){
+            }else if( value >= "0" && agency !== 0 && account == 0){
                     alert("Por favor, digite a conta para qual deseja realizar a transferência!");
             }else{ 
+                const parsedValue = parseFloat(value.replace(',', '.'));
                 createTransactionTransfer({
-                    value,
+                    value: parsedValue,
                     description,
                     type:"Transferência"
                 })
                 
                 onRequestClose()
-            } 
-    }      
+            }    
+    }    
+    
+    const handleCurrencyChange = (value: string | undefined) => {
+        if (value === undefined) {
+          setValue('0');
+        } else {
+          setValue(value);
+        }
+      };
 
     return(
         <>
@@ -53,13 +63,13 @@ export function FormTransfers({onRequestClose}:FormTransferProps){
 
                 <label htmlFor="transfer-value">
                     Qual valor gostaria de transferir ?
-                    <input
-                        id="transfer-value"
-                        className="input-value" 
-                        placeholder="Valor"
+                    <CurrencyInput
+                        prefix="R$ "
+                        decimalSeparator=","
+                        groupSeparator="."
                         value={value}
-                        onChange={event => setValue(Number(event.target.value))}
-                    /> 
+                        onValueChange={handleCurrencyChange}
+                    />
                 </label>     
                 <label htmlFor="agency">
                     Agência

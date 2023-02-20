@@ -16,7 +16,7 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
 
     const { createTransactionPayment } = useContext(TransactionsContext);
 
-    const [value, setValue] = useState<string>('0')
+    const [value, setValue] = useState('0')
     const [description, setDescription] = useState('')
     const [type, setType] = useState('')
 
@@ -48,6 +48,8 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
           setValue(value);
         }
       };
+
+
 
 
     return(

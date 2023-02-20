@@ -34,27 +34,6 @@
       "type": "Deposito",
       "createdAt": "2022-12-24T00:13:54.732Z",
       "id": 5
-    },
-    {
-      "value": 48.79,
-      "description": "Uber",
-      "type": "Deposito",
-      "createdAt": "2023-02-18T21:34:18.503Z",
-      "id": 6
-    },
-    {
-      "value": 781.97,
-      "description": "Reforma",
-      "type": "Deposito",
-      "createdAt": "2023-02-18T21:38:23.404Z",
-      "id": 7
-    },
-    {
-      "value": 212.25,
-      "description": "Boleto",
-      "type": "Débito em Conta",
-      "createdAt": "2023-02-20T01:41:18.283Z",
-      "id": 8
     }
   ]
 }

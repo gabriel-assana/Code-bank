@@ -15,7 +15,7 @@ export function FormDeposit({ onRequestClose }:FormDepositProps){
 
     const { createTransactionDeposit } = useContext(TransactionsContext)
 
-    const [value, setValue] = useState<string>('0')
+    const [value, setValue] = useState('0')
     const [description, setDescription] = useState('')
 
     const handleCurrencyChange = (value: string | undefined) => {
@@ -56,13 +56,16 @@ export function FormDeposit({ onRequestClose }:FormDepositProps){
 
                 <h2>Depositos</h2>
 
-                <CurrencyInput
-                    prefix="R$ "
-                    decimalSeparator=","
-                    groupSeparator="."
-                    value={value}
-                    onValueChange={handleCurrencyChange}
-                />
+                <label htmlFor="deposit">
+                    Qual valor gostaria de realizar o depositar ?
+                    <CurrencyInput
+                        prefix="R$ "
+                        decimalSeparator=","
+                        groupSeparator="."
+                        value={value}
+                        onValueChange={handleCurrencyChange}
+                    />
+                </label>
 
 
                 <input 
