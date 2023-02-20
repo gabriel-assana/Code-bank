@@ -1,6 +1,7 @@
 import '../../styles/form/Form.css';
 
 import { FormEvent, useContext, useState } from 'react';
+import CurrencyInput from 'react-currency-input-field';
 
 import close from '../../assets/close.svg';
 import credito from '../../assets/credit-card.svg';
@@ -15,22 +16,23 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
 
     const { createTransactionPayment } = useContext(TransactionsContext);
 
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState<string>('0')
     const [description, setDescription] = useState('')
     const [type, setType] = useState('')
 
-    function handleCreatePayment(event: FormEvent) {
+    async function handleCreatePayment(event: FormEvent) {
         event.preventDefault(); 
         
-        if(value == 0 && type == ""){
+        if(value == "0" && type == ""){
             alert("Por favor digite um valor superior a 0 e escolha a forma de pagamento!")
-        }else if(value == 0 && type !== ""){
+        }else if(value == "0" && type !== ""){
             alert("Por favor digite um valor superior a 0!")          
-        }else if(value !== 0 && type == ""){
+        }else if(value !== "0" && type == ""){
             alert("Por favor escolha a forma de pagamento!") 
         }else{
-            createTransactionPayment({
-                value,
+            const parsedValue = parseFloat(value.replace(',', '.'));
+            await createTransactionPayment({
+                value: parsedValue,
                 description,
                 type
             })
@@ -38,6 +40,14 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
             onRequestClose()
         }
     }
+
+    const handleCurrencyChange = (value: string | undefined) => {
+        if (value === undefined) {
+          setValue('0');
+        } else {
+          setValue(value);
+        }
+      };
 
 
     return(
@@ -52,15 +62,14 @@ export function FormPayments({onRequestClose}: FormPaymentsProps){
 
                 <label htmlFor="payment">
                     Qual valor gostaria de realizar o pagamento ?
-                    <input
-                        id="payment"
-                        placeholder="Valor a ser pago"
+                    <CurrencyInput
+                        prefix="R$ "
+                        decimalSeparator=","
+                        groupSeparator="."
                         value={value}
-                        onChange={event => setValue(Number(event.target.value))}
+                        onValueChange={handleCurrencyChange}
                     />
-
                 </label>
-
 
                 <div className="container-btns">
                     <button
